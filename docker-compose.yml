@@ -1,0 +1,17 @@
+services:
+  jenkins:
+    build:
+      context: ./
+      dockerfile: jenkins_master.Dockerfile
+    environment:
+      - JAVA_OPTS=-Dhudson.footerURL=http://felix-orduz.click -Djenkins.install.runSetupWizard=false
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+    restart: on-failure
+  ssh-agent:
+    image: jenkins/ssh-agent
+volumes:
+  jenkins_home:
