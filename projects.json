@@ -1,0 +1,10 @@
+{
+    "projects":[
+        {
+            "name":"example",
+            "description":"Example",
+            "scmUrl":"https://github.com/gabrielf/maven-samples.git",
+            "type":"maven"
+        }
+    ]
+}

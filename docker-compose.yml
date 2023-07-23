@@ -5,6 +5,8 @@ services:
       dockerfile: jenkins_master.Dockerfile
     environment:
       - JAVA_OPTS=-Dhudson.footerURL=http://felix-orduz.click -Djenkins.install.runSetupWizard=false
+      - JENKINS_ADMIN_ID=admin
+      - JENKINS_ADMIN_PASSWORD=admin
     ports:
       - "8080:8080"
       - "50000:50000"
@@ -13,5 +15,15 @@ services:
     restart: on-failure
   ssh-agent:
     image: jenkins/ssh-agent
+  # jenkins_slave:
+  #   image: jenkins/jnlp-slave
+  #   container_name: jnlp_slave
+  #   user: root
+  #   command: -url http:/jenkins:8080 <secret> <jenkins_slave>
+  #   restart: always
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #     - /usr/bin/docker:/usr/bin/docker
+  #     - $HOME/jnlp_slave:/var/jenkins_home
 volumes:
   jenkins_home:

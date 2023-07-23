@@ -1,21 +1,49 @@
+
+unclassified:
+  location:
+    url: http://localhost:8080/
+  locale:
+    systemLocale: en
+    ignoreAcceptLanguage: true
+
 jenkins:
-    systemMessage: "Jenkins FEOG"
-    numExecutors: 0
-    remotingSecurity:
-      enabled: true
-    agentProtocols:
-        - "JNLP4-connect"
-    securityRealm:
-        local:
-            allowsSignup: false
-            users:
-                - id: forduz
-                  password: 123456
-    authorizationStrategy:
-        globalMatrix:
-            grantedPermissions:
-                - "Overall/Read:authenticated"
-                - "Job/Read:authenticated"
-                - "View/Read:authenticated"
-                - "Overall/Administer:authenticated"
-    crumbIssuer: "standard"
+  systemMessage: "Jenkins FEOG"
+  numExecutors: 1
+  remotingSecurity:
+    enabled: true
+  # agentProtocols:
+  #     - "JNLP4-connect"
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: ${JENKINS_ADMIN_ID}
+          password: ${JENKINS_ADMIN_PASSWORD}
+  # authorizationStrategy:
+  #     globalMatrix:
+  #         grantedPermissions:
+  #             - "Overall/Read:authenticated"
+  #             - "Job/Read:authenticated"
+  #             - "View/Read:authenticated"
+  #             - "Overall/Administer:authenticated"
+  crumbIssuer: "standard"
+security:
+  scriptApproval:
+    approvedScriptHashes:
+    - "SHA512:6c985b8810ea05eca5881306b0a87cadbef3030e480000f36fb0ade96b8a4e8bf746acfb28d41fdf1f5a4f06a00dd9cbbd8307687b8f2e274977f06b31524290"
+jobs:
+  - script: >
+      job('Job_DSL_Seed') {
+        scm {
+          git {
+            remote {
+              url 'ssh://git.example.com/project/jenkins-jobs.git'
+            }
+          }
+        }
+        steps {
+          script {
+            ls -l
+          }
+        }
+      }
