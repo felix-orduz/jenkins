@@ -4,3 +4,4 @@ configuration-as-code:1647.ve39ca_b_829b_42
 job-dsl:1.84
 locale:314.v22ce953dfe9e
 workflow-job:1316.vd2290d3341a_f
+workflow-aggregator:596.v8c21c963d92d

@@ -37,13 +37,54 @@ jobs:
         scm {
           git {
             remote {
-              url 'ssh://git.example.com/project/jenkins-jobs.git'
+              url 'https://github.com/felix-orduz/jenkins.git'
             }
           }
         }
         steps {
-          script {
-            ls -l
+          jobDsl {
+            targets 'jobs/**/*.groovy'
           }
         }
       }
+  - script: >
+      pipelineJob('Simple job non critical task') {
+        definition {
+          cps {
+            script('''
+              pipeline {
+                  agent any
+                  stages {
+                    stage('Test') {
+                        steps {
+                            script {
+                                sh "echo this was executed on a spot instance"
+                            }
+                            sh 'sleep 30'
+                            sh 'echo sleep is done'
+                        }
+                    }
+                  }
+              }'''.stripIndent())
+              sandbox()
+          }
+        }
+      }
+  - script: >
+      pipelineJob('Test 3') {
+        definition {
+          cpsScm {
+            scm {
+              git {
+                remote {
+                  url 'https://github.com/felix-orduz/jenkins.git'
+                }
+                branch 'main'
+              }
+
+              scriptPath 'seed.jenkinsfile'
+            }
+          }
+        }
+      }
+
