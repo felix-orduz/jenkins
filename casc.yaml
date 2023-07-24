@@ -81,8 +81,7 @@ jobs:
                 }
                 branch 'main'
               }
-
-              scriptPath 'seed.jenkinsfile'
+              scriptPath 'JDSL/seed.jenkinsfile'
             }
           }
         }
