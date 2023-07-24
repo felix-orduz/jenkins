@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages {
+        stage('Create Job') {
+            steps {
+                script {
+                    sh 'ls -l'
+                    def BuildProperties = readJSON file: 'projects.json'
+                    echo "${BuildProperties}"
+                    // jobDsl targets: ['jobs/json.groovy'].join('\n'),
+                    //   removedJobAction: 'DISABLE',
+                    //   removedViewAction: 'IGNORE',
+                    //   lookupStrategy: 'SEED_JOB',
+                    //   // additionalClasspath: ['vars/'].join('\n'),
+                    //   additionalParameters: [projects: BuildProperties]
+                }
+            }
+      }
+    }
+}
