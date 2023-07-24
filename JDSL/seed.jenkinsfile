@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     sh 'ls -l'
-                    def BuildProperties = readJSON file: 'projects.json'
+                    def BuildProperties = readJSON file: 'JDSL/projects.json'
                     echo "${BuildProperties}"
                     // jobDsl targets: ['jobs/json.groovy'].join('\n'),
                     //   removedJobAction: 'DISABLE',
