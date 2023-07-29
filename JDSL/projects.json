@@ -1,10 +1,16 @@
 {
-    "projects":[
+    "systems":[
         {
-            "name":"example",
-            "description":"Example",
-            "scmUrl":"https://github.com/gabrielf/maven-samples.git",
-            "type":"maven"
+            "name":"Nombre Sistema",
+            "description":"Desc Sistema",
+            "Aplications":[
+                {
+                    "name":"Nombre Sistema",
+                    "description":"desc system",
+                    "scm":"github",
+                    "scmURL": "https://github.com/jitpack/maven-simple"
+                }
+            ]
         }
     ]
 }
