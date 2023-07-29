@@ -7,12 +7,13 @@ pipeline {
                     sh 'ls -l'
                     def BuildProperties = readJSON file: 'JDSL/projects.json'
                     echo "${BuildProperties}"
-                    // jobDsl targets: ['jobs/json.groovy'].join('\n'),
-                    //   removedJobAction: 'DISABLE',
-                    //   removedViewAction: 'IGNORE',
-                    //   lookupStrategy: 'SEED_JOB',
-                    //   // additionalClasspath: ['vars/'].join('\n'),
-                    //   additionalParameters: [projects: BuildProperties]
+                    jobDs targets build: ['JDSL/jdsl.groovy']
+                    // jobDsl targets: ['jobs/jdsl.groovy'].join('\n'),
+                    //     removedJobAction: 'DISABLE',
+                    //     removedViewAction: 'IGNORE',
+                    //     lookupStrategy: 'SEED_JOB',
+                    //     additionalClasspath: ['vars/'].join('\n'),
+                    //     additionalParameters: [projects: BuildProperties]
                 }
             }
       }
