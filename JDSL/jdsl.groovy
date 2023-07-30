@@ -10,7 +10,7 @@ def config = new JsonSlurper().parseText(releaseScript)
 println(config)
 config["systems"].each { system ->
 
-    createFolder();
+    createFolder
 
     folder(system['name']) {
 
