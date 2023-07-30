@@ -1,17 +1,17 @@
 import groovy.json.JsonSlurper
 
-def createFolder(name, displayName, description){
+def createFolder(name, displayNameValue, descriptionValue){
 
     println("Creating folder");
 
     folder(name) {
 
-        if(displayName != null ){
-            displayName(displayName)
+        if(displayNameValue != null ){
+            displayName(displayNameValue)
         }
 
-        if(description != null ){
-            description(description)
+        if(descriptionValue != null ){
+            description(descriptionValue)
         }
     }
 }
