@@ -1,9 +1,9 @@
 import groovy.json.JsonSlurper
 
-def createJob(application){
+def createJob(pipelineName, application){
     print("New Application");
     print(application);
-    multibranchPipelineJob("/${system['name']}/${application["name"]}") {
+    multibranchPipelineJob(pipelineName) {
         displayName(application["name"]);
         description(application["description"]);
 
@@ -47,7 +47,7 @@ config["systems"].each { system ->
 
     system["aplications"].each{ application  ->
 
-        createJob(application);
+        createJob("/${system['name']}/${application["name"]}", application);
 
     }
 }

@@ -33,45 +33,7 @@ security:
     - "SHA512:6c985b8810ea05eca5881306b0a87cadbef3030e480000f36fb0ade96b8a4e8bf746acfb28d41fdf1f5a4f06a00dd9cbbd8307687b8f2e274977f06b31524290"
 jobs:
   - script: >
-      job('Job_DSL_Seed') {
-        scm {
-          git {
-            remote {
-              url 'https://github.com/felix-orduz/jenkins.git'
-            }
-          }
-        }
-        steps {
-          jobDsl {
-            targets 'jobs/**/*.groovy'
-          }
-        }
-      }
-  - script: >
-      pipelineJob('Simple job non critical task') {
-        definition {
-          cps {
-            script('''
-              pipeline {
-                  agent any
-                  stages {
-                    stage('Test') {
-                        steps {
-                            script {
-                                sh "echo this was executed on a spot instance"
-                            }
-                            sh 'sleep 30'
-                            sh 'echo sleep is done'
-                        }
-                    }
-                  }
-              }'''.stripIndent())
-              sandbox()
-          }
-        }
-      }
-  - script: >
-      pipelineJob('Test 3') {
+      pipelineJob('Seed Job') {
         definition {
           cpsScm {
             scm {
