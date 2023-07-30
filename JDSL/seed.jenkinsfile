@@ -8,6 +8,7 @@ pipeline {
                     def BuildProperties = readJSON file: 'JDSL/projects.json'
                     echo "${BuildProperties}"
                     jobDsl targets: 'JDSL/jdsl.groovy',
+                        additionalClasspath: ['vars/'].join('\n'),
                         removedJobAction: 'DISABLE',
                         ignoreExisting: false
                     //jobDsl targets: ['JDSL/jdsl.groovy'].join('\n'),
