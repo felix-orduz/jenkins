@@ -22,7 +22,7 @@ def config = new JsonSlurper().parseText(releaseScript)
 println(config)
 config["systems"].each { system ->
 
-    createFolder(system['name'], displayName(system['displayName']), description(system['description']));
+    createFolder(system['name'], system['displayName'], system['description']);
 
     config["aplications"].each{ application  ->
 
