@@ -14,7 +14,7 @@ config["systems"].each { system ->
 
     folder(system['name']) {
 
-        if(system['displayName'] !== null ){
+        if(system['displayName'] != null ){
             displayName(system['displayName'])
         }
 
