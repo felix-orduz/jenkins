@@ -4,14 +4,14 @@ def createFolder(name, displayName, description){
 
     println("Creating folder");
 
-    folder(system['name']) {
+    folder(name) {
 
         if(system['displayName'] != null ){
-            displayName(system['displayName'])
+            displayName(displayName)
         }
 
         if(system['description'] != null ){
-            description(system['description'])
+            description(description)
         }
     }
 }
