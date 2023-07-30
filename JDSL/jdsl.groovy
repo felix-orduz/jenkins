@@ -1,7 +1,19 @@
 import groovy.json.JsonSlurper
 
-def createFolder(){
+def createFolder(name, displayName, description){
+
     println("Creating folder");
+
+    folder(system['name']) {
+
+        if(system['displayName'] != null ){
+            displayName(system['displayName'])
+        }
+
+        if(system['description'] != null ){
+            description(system['description'])
+        }
+    }
 }
 
 def releaseScript = readFileFromWorkspace('JDSL/projects.json')
@@ -10,15 +22,12 @@ def config = new JsonSlurper().parseText(releaseScript)
 println(config)
 config["systems"].each { system ->
 
-    createFolder
+    createFolder(system['name'], displayName(system['displayName']), description(system['description']));
 
-    folder(system['name']) {
+    config["aplications"].each{ application  ->
 
-        if(system['displayName'] != null ){
-            displayName(system['displayName'])
-        }
+        multibranchPipelineJob("/${system['name']}/${repo["name"]}") {}
 
-        description(system['description'])
     }
 }
 // config["organizations"].each { org ->
