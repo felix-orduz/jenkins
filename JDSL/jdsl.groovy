@@ -11,10 +11,11 @@ def createJob(pipelineName, application){
           branchSource{
             source{
                 github {
-                    id('23232323') // IMPORTANT: use a constant and unique identifier
-                    scanCredentialsId('github-ci')
-                    repoOwner('OwnerName')
-                    repository('job-dsl-plugin')
+                    id('23232323')
+                    repositoryUrl("https://github.com/jitpack/maven-simple") // IMPORTANT: use a constant and unique identifier
+                    // scanCredentialsId('github-ci')
+                    // repoOwner('OwnerName')
+                    // repository('job-dsl-plugin')
                 }
             }
           }
