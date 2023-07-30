@@ -12,10 +12,10 @@ def createJob(pipelineName, application){
             source{
                 github {
                     id(pipelineName)
-                    //repositoryUrl(application['scmURL']) // IMPORTANT: use a constant and unique identifier
+                    repositoryUrl(application['scmURL']) // IMPORTANT: use a constant and unique identifier
                     configuredByUrl(true)
                     repoOwner(application['owner'])
-                    //repository(application['scmURL'])
+                    repository(application['owner']+"/"+application['repository'])
                 }
             }
           }

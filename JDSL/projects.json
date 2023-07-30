@@ -1,17 +1,18 @@
 {
-    "systems":[
+  "systems": [
+    {
+      "name": "FEOG",
+      "description": "Projects of FEOG",
+      "aplications": [
         {
-            "name":"FEOG",
-            "description":"Projects of FEOG",
-            "aplications":[
-                {
-                    "name":"nodejs",
-                    "description":"It's a simple NodeJS application",
-                    "scm":"github",
-                    "scmURL": "https://github.com/felix-orduz/nodejs.git",
-                    "repoOwner":"felix-orduz"
-                }
-            ]
+          "name": "nodejs",
+          "respository": "nodejs",
+          "description": "It's a simple NodeJS application",
+          "scm": "github",
+          "scmURL": "https://github.com/felix-orduz/nodejs.git",
+          "repoOwner": "felix-orduz"
         }
-    ]
+      ]
+    }
+  ]
 }
