@@ -26,7 +26,10 @@ config["systems"].each { system ->
 
     config["aplications"].each{ application  ->
 
-        multibranchPipelineJob("/${system['name']}/${application["name"]}") {}
+        multibranchPipelineJob("/${system['name']}/${application["name"]}") {
+            displayName(application["name"])
+            description(application["decription"])
+        }
 
     }
 }
