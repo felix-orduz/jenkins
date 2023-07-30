@@ -14,8 +14,8 @@ def createJob(pipelineName, application){
                     id('23232323')
                     repositoryUrl("https://github.com/jitpack/maven-simple") // IMPORTANT: use a constant and unique identifier
                     // scanCredentialsId('github-ci')
-                    // repoOwner('OwnerName')
-                    // repository('job-dsl-plugin')
+                    repoOwner('OwnerName')
+                    repository('job-dsl-plugin')
                 }
             }
           }
