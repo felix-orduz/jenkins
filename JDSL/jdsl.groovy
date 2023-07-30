@@ -5,16 +5,24 @@
 //     description 'This example shows basic folder/job creation.'
 // }
 
+import utilities.MyUtilities
 import groovy.json.JsonSlurper
+
+def create_folder
+
 def releaseScript = readFileFromWorkspace('JDSL/projects.json')
 // ${WORKSPACE}
 // hudson.FilePath workspace = hudson.model.Executor.currentExecutor().getCurrentWorkspace()
 def config = new JsonSlurper().parseText(releaseScript)
 println(config)
 config["systems"].each { system ->
-        folder(system['name']) {
-        // displayName('Project A')
-        // description('Folder for project A')
+    folder(system['name']) {
+
+        if(system['displayName'] !== null ){
+            displayName(system['displayName'])
+        }
+
+        description(system['description'])
     }
 }
 // config["organizations"].each { org ->
