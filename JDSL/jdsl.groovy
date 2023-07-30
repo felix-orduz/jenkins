@@ -5,7 +5,7 @@
 //     description 'This example shows basic folder/job creation.'
 // }
 
-// import groovy.json.JsonSlurper
+import groovy.json.JsonSlurper
 def releaseScript = readFileFromWorkspace('JDSL/projects.json')
 // ${WORKSPACE}
 // hudson.FilePath workspace = hudson.model.Executor.currentExecutor().getCurrentWorkspace()
