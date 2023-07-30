@@ -1,14 +1,15 @@
 {
     "systems":[
         {
-            "name":"Nombre Sistema",
-            "description":"Desc Sistema",
+            "name":"FEOG",
+            "description":"Projects of FEOG",
             "aplications":[
                 {
-                    "name":"Nombre Sistema",
-                    "description":"desc system",
+                    "name":"nodejs",
+                    "description":"It's a simple NodeJS application",
                     "scm":"github",
-                    "scmURL": "https://github.com/jitpack/maven-simple"
+                    "scmURL": "https://github.com/felix-orduz/nodejs.git",
+                    "repoOwner":"felix-orduz"
                 }
             ]
         }
