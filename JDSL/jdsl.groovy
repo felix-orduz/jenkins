@@ -10,7 +10,7 @@ def releaseScript = readFileFromWorkspace('JDSL/projects.json')
 // ${WORKSPACE}
 // hudson.FilePath workspace = hudson.model.Executor.currentExecutor().getCurrentWorkspace()
 def config = new JsonSlurper().parseText(releaseScript)
-
+println(config)
 // config["organizations"].each { org ->
 //   org["repositories"].each { repo ->
 //     multibranchPipelineJob("${org["name"]}_${repo}") {
