@@ -1,5 +1,27 @@
 import groovy.json.JsonSlurper
 
+def createJob(application){
+    print("New Application");
+    print(application);
+    multibranchPipelineJob("/${system['name']}/${application["name"]}") {
+        displayName(application["name"]);
+        description(application["description"]);
+
+        branchSources {
+          branchSource{
+            source{
+                github {
+                    id('23232323') // IMPORTANT: use a constant and unique identifier
+                    scanCredentialsId('github-ci')
+                    repoOwner('OwnerName')
+                    repository('job-dsl-plugin')
+                }
+            }
+          }
+        }
+    }
+}
+
 def createFolder(name, displayNameValue, descriptionValue){
 
     println("Creating folder");
@@ -7,34 +29,25 @@ def createFolder(name, displayNameValue, descriptionValue){
     folder(name) {
 
         if(displayNameValue != null ){
-            displayName(displayNameValue)
+            displayName(displayNameValue);
         }
 
         if(descriptionValue != null ){
-            description(descriptionValue)
+            description(descriptionValue);
         }
     }
 }
 
-def releaseScript = readFileFromWorkspace('JDSL/projects.json')
-
-def config = new JsonSlurper().parseText(releaseScript)
+def releaseScript = readFileFromWorkspace('JDSL/projects.json');
+def config = new JsonSlurper().parseText(releaseScript);
 println(config)
 config["systems"].each { system ->
 
     createFolder(system['name'], system['displayName'], system['description']);
 
-    print("Applications:");
-    print(system["aplications"]);
-
     system["aplications"].each{ application  ->
 
-        print("New Application");
-        print(application);
-        multibranchPipelineJob("/${system['name']}/${application["name"]}") {
-            displayName(application["name"])
-            description(application["decription"])
-        }
+        createJob(application);
 
     }
 }
