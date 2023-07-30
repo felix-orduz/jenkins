@@ -24,7 +24,10 @@ config["systems"].each { system ->
 
     createFolder(system['name'], system['displayName'], system['description']);
 
-    config["aplications"].each{ application  ->
+    print("Applications:");
+    print(system["aplications"]);
+
+    system["aplications"].each{ application  ->
 
         print("New Application");
         print(application);
