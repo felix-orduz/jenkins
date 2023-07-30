@@ -26,6 +26,8 @@ config["systems"].each { system ->
 
     config["aplications"].each{ application  ->
 
+        print("New Application");
+        print(application);
         multibranchPipelineJob("/${system['name']}/${application["name"]}") {
             displayName(application["name"])
             description(application["decription"])
