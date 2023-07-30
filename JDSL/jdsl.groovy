@@ -6,11 +6,11 @@ def createFolder(name, displayName, description){
 
     folder(name) {
 
-        if(system['displayName'] != null ){
+        if(displayName != null ){
             displayName(displayName)
         }
 
-        if(system['description'] != null ){
+        if(description != null ){
             description(description)
         }
     }
