@@ -5,9 +5,10 @@
 //     description 'This example shows basic folder/job creation.'
 // }
 
-import groovy.json.JsonSlurper
-
-hudson.FilePath workspace = hudson.model.Executor.currentExecutor().getCurrentWorkspace()
+// import groovy.json.JsonSlurper
+def releaseScript = readFileFromWorkspace('JDSL/projects.json')
+// ${WORKSPACE}
+// hudson.FilePath workspace = hudson.model.Executor.currentExecutor().getCurrentWorkspace()
 // def config = new JsonSlurper().parseText(new File("${workspace}/data/multibranch_jobs.json").text)
 
 // config["organizations"].each { org ->
