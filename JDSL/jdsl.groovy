@@ -26,7 +26,7 @@ config["systems"].each { system ->
 
     config["aplications"].each{ application  ->
 
-        multibranchPipelineJob("/${system['name']}/${repo["name"]}") {}
+        multibranchPipelineJob("/${system['name']}/${application["name"]}") {}
 
     }
 }
