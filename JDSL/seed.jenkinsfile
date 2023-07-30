@@ -9,6 +9,8 @@ pipeline {
                     echo "${BuildProperties}"
                     jobDsl targets: 'JDSL/jdsl.groovy',
                         additionalClasspath: ['vars/'].join('\n'),
+                        additionalParameters: [projects: BuildProperties]
+                        failOnMissingPlugin: true,
                         removedJobAction: 'DISABLE',
                         ignoreExisting: false
                     //jobDsl targets: ['JDSL/jdsl.groovy'].join('\n'),
