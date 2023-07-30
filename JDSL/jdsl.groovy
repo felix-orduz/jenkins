@@ -10,6 +10,7 @@ def createJob(pipelineName, application){
         branchSources {
 
             github {
+                id("12312312")
                 repoOwner(application['owner'])
                 repository(application['owner']+'/'+application['respository'])
                 // repositoryUrl("https://github.com/felix-orduz/nodejs.git") // IMPORTANT: use a constant and unique identifier
