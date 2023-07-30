@@ -15,6 +15,12 @@ def createJob(pipelineName, application){
             }
         }
 
+        factory {
+            remoteJenkinsFileWorkflowBranchProjectFactory{
+
+            }
+        }
+
         orphanedItemStrategy {
             discardOldItems {
                 numToKeep(20)
