@@ -11,14 +11,19 @@ def createJob(pipelineName, application){
           branchSource{
             source{
                 github {
-                    id(pipelineName)
+                    repoOwner(application['owner'])
+                    repository(application['owner']+'/'+application['respository'])
                     repositoryUrl(application['scmURL']) // IMPORTANT: use a constant and unique identifier
                     configuredByUrl(true)
-                    repoOwner(application['owner'])
-                    repository(application['owner']+"/"+application['repository'])
                 }
             }
           }
+        }
+
+        orphanedItemStrategy {
+            discardOldItems {
+                numToKeep(20)
+            }
         }
     }
 }
