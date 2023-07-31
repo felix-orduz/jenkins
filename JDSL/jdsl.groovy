@@ -35,6 +35,7 @@ def createJob(pipelineName, application){
                             }
                         }
                         gitTool("github")
+                        localMarker("")
                     }
                     // scmGit {
 
