@@ -38,10 +38,10 @@ def createJob(pipelineName, application){
                         gitTool('git')
 
                         extensions {
-                            excludeFromPoll()
-                            excludeFromChangeSet()
-                            ignoreNotifyCommit()
-                            disableRemotePoll()
+                            // excludeFromPoll()
+                            // excludeFromChangeSet()
+                            // ignoreNotifyCommit()
+                            // disableRemotePoll()
 
                         }
                     }
