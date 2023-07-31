@@ -8,8 +8,9 @@ RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/d
 RUN apt-get update && apt-get install -y docker-ce-cli
 
 USER jenkins
-COPY casc.yaml /var/jenkins_home/casc.yaml
-COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
+COPY ../JCASC/casc.yaml /var/jenkins_home/casc.yaml
+COPY ../JCASC/plugins.txt /usr/share/jenkins/ref/plugins.txt
+COPY ../JCASC/initialConfig.groovy /usr/share/jenkins/ref/init.groovy.d/initialConfig.groovy
 
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
 ENV CASC_JENKINS_CONFIG /var/jenkins_home/casc.yaml

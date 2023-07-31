@@ -13,14 +13,8 @@ pipeline {
                         failOnMissingPlugin: true,
                         removedJobAction: 'DISABLE',
                         ignoreExisting: false
-                    //jobDsl targets: ['JDSL/jdsl.groovy'].join('\n'),
-                    //     removedJobAction: 'DISABLE',
-                    //     removedViewAction: 'IGNORE',
-                    //     lookupStrategy: 'SEED_JOB',
-                    //     additionalClasspath: ['vars/'].join('\n'),
-                    //     additionalParameters: [projects: BuildProperties]
                 }
             }
-      }
+        }
     }
 }

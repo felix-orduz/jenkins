@@ -1,6 +1,6 @@
 import jenkins.model.*
 import jenkins.install.InstallState
-Jenkins.instance.setNumExecutors(0)
+Jenkins.instance.setNumExecutors(1)
 Jenkins.instance.setInstallState(InstallState.INITIAL_SETUP_COMPLETED)
 
 // setting the Jenkins URL

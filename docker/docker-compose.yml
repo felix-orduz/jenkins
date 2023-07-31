@@ -1,8 +1,8 @@
 services:
   jenkins:
     build:
-      context: ./
-      dockerfile: jenkins_master.Dockerfile
+      context: ../
+      dockerfile: docker/jenkins_master.Dockerfile
     environment:
       - JAVA_OPTS=-Dhudson.footerURL=http://felix-orduz.click -Djenkins.install.runSetupWizard=false
       - JENKINS_ADMIN_ID=admin
@@ -15,15 +15,5 @@ services:
     restart: on-failure
   ssh-agent:
     image: jenkins/ssh-agent
-  # jenkins_slave:
-  #   image: jenkins/jnlp-slave
-  #   container_name: jnlp_slave
-  #   user: root
-  #   command: -url http:/jenkins:8080 <secret> <jenkins_slave>
-  #   restart: always
-  #   volumes:
-  #     - /var/run/docker.sock:/var/run/docker.sock
-  #     - /usr/bin/docker:/usr/bin/docker
-  #     - $HOME/jnlp_slave:/var/jenkins_home
 volumes:
   jenkins_home:
