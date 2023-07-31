@@ -17,7 +17,16 @@ def createJob(pipelineName, application){
 
         factory {
             remoteJenkinsFileWorkflowBranchProjectFactory{
-
+                remoteJenkinsFile("pipelines/nodejs.groovy")
+                remoteJenkinsFileSCM {
+                    gitSCM {
+                        userRemoteConfigs {
+                            userRemoteConfig {
+                                url("https://github.com/felix-orduz/jenkins.git")
+                            }
+                        }
+                    }
+                }
             }
         }
 
