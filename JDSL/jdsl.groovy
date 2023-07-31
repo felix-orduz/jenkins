@@ -23,8 +23,8 @@ def createJob(pipelineName, application){
                     gitSCM {
                         userRemoteConfigs {
                             userRemoteConfig {
-                                name('')
-                                url('https://github.com/felix-orduz/jenkins.git"')
+                                name("")
+                                url("https://github.com/felix-orduz/jenkins.git")
                                 refspec("")
                                 credentialsId("")
                             }
