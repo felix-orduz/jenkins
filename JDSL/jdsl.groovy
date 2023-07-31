@@ -38,7 +38,8 @@ def createJob(pipelineName, application){
                                 name('main')
                             }
                         }
-                        browser {} // required, but doesn't require configuration
+
+                        browser {}
                         gitTool('git')
 
                         extensions {

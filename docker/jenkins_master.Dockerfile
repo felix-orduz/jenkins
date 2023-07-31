@@ -15,5 +15,5 @@ COPY ../JCASC/initialConfig.groovy /usr/share/jenkins/ref/init.groovy.d/initialC
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
 ENV CASC_JENKINS_CONFIG /var/jenkins_home/casc.yaml
 RUN jenkins-plugin-cli --plugin-file /usr/share/jenkins/ref/plugins.txt
-RUN jenkins-plugin-cli -f /usr/share/jenkins/ref/plugins.txt
+# RUN jenkins-plugin-cli -f /usr/share/jenkins/ref/plugins.txt
 

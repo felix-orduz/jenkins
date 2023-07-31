@@ -1,6 +1,6 @@
 javax-mail-api:1.6.2-9
 github:1.37.1
-configuration-as-code:1647.ve39ca_b_829b_42
+configuration-as-code:1670.v564dc8b_982d0
 job-dsl:1.84
 locale:314.v22ce953dfe9e
 workflow-job:1316.vd2290d3341a_f
