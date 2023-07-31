@@ -27,6 +27,12 @@ def createJob(pipelineName, application){
                                 refspec("")
                                 credentialsId("")
                             }
+
+                        }
+                         browser {
+                            github {
+                                repoUrl("https://github.com/felix-orduz/jenkins.git")
+                            }
                         }
                     }
                     // scmGit {
