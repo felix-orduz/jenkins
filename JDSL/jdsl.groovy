@@ -58,7 +58,7 @@ def createJob(pipelineName, application){
                             }
                         }
                         browser {} // required, but doesn't require configuration
-                        gitTool('/usr/bin/env git')
+                        gitTool('git')
 
                         extensions {
                             excludeFromPoll()
