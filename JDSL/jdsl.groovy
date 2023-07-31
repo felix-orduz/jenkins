@@ -29,11 +29,11 @@ def createJob(pipelineName, application){
                         //     }
 
                         // }
-                         browser {
-                            github {
-                                repoUrl("https://github.com/felix-orduz/jenkins.git")
-                            }
-                        }
+                        // browser {
+                        //     github {
+                        //         repoUrl("https://github.com/felix-orduz/jenkins.git")
+                        //     }
+                        // }
                         gitTool("github")
                         localMarker("")
                     }
