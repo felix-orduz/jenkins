@@ -18,7 +18,7 @@ def createJob(pipelineName, application){
         factory {
             remoteJenkinsFileWorkflowBranchProjectFactory{
                 remoteJenkinsFile("pipelines/nodejs.groovy")
-                localMarker("package.json")
+                localMarker("README.md")
                 remoteJenkinsFileSCM {
                     gitSCM {
                         userRemoteConfigs {
@@ -40,7 +40,7 @@ def createJob(pipelineName, application){
                         extensions {
                             excludeFromPoll()
                             //excludeFromPoll()
-                            //excludeFromChangeSet()
+                            excludeFromChangeSet()
                             // ignoreNotifyCommit()
                             // disableRemotePoll()
 
