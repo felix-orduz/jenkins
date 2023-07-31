@@ -41,14 +41,12 @@ def createJob(pipelineName, application){
                         browser {} // required, but doesn't require configuration
                         gitTool('git')
 
-                        // extensions {
-                        //     excludeFromPoll()
-                        //     //excludeFromPoll()
-                        //     excludeFromChangeSet()
-                        //     // ignoreNotifyCommit()
-                        //     // disableRemotePoll()
-
-                        // }
+                        extensions {
+                            excludeFromPoll()
+                            excludeFromChangeSet()
+                            ignoreNotifyCommit()
+                            disableRemotePoll()
+                        }
                     }
                 }
             }
