@@ -13,6 +13,21 @@
           "repoOwner": "felix-orduz"
         }
       ]
+    },
+
+    {
+      "name": "Dani",
+      "description": "Projects of DANI",
+      "aplications": [
+        {
+          "name": "nodejs-dani",
+          "respository": "nodejs",
+          "description": "It's a simple NodeJS application",
+          "scm": "github",
+          "scmURL": "https://github.com/felix-orduz/nodejs.git",
+          "repoOwner": "felix-orduz"
+        }
+      ]
     }
   ]
 }
