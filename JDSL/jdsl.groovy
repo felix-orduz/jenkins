@@ -34,6 +34,7 @@ def createJob(pipelineName, application){
                                 repoUrl("https://github.com/felix-orduz/jenkins.git")
                             }
                         }
+                        gitTool("github")
                     }
                     // scmGit {
 
