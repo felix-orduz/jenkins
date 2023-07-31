@@ -18,6 +18,10 @@ def createJob(pipelineName, application){
         factory {
             remoteJenkinsFileWorkflowBranchProjectFactory{
                 remoteJenkinsFile("pipelines/nodejs.groovy")
+                scriptPath("")
+                fallbackBranch("main")
+                matchBranches(false)
+                lookupInParameters(false)
                 localMarker("README.md")
                 remoteJenkinsFileSCM {
                     gitSCM {
